@@ -144,7 +144,6 @@ SentinelVulnScan is built with a modular architecture:
 
 The following architecture diagrams are available:
 
-- [Application Architecture (Draw.io)](./SentinelVulnScan_Architecture.drawio) - Detailed application architecture diagram
 - [Application Architecture (Simple)](./SentinelVulnScan_Architecture_Simple.drawio) - Simplified application architecture
 - [Application Architecture (Mermaid)](./SentinelVulnScan_Architecture.mmd) - Text-based architecture diagram
 - [Vulnerability Scan Flow](./SentinelVulnScan_VulnerabilityScanFlow_Simple.drawio) - Diagram of the vulnerability scanning process
