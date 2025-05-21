@@ -1,0 +1,37 @@
+graph TD
+    %% Main Components
+    User([User]) --> Program[Program.cs]
+    Program --> Scanner[Core/Scanner.cs]
+    Scanner --> Configuration[Core/Configuration.cs]
+    Scanner --> Scanners[Scanners/*Scanner.cs]
+    
+    %% Scanner types
+    Scanners --> SQLS[SqlInjectionScanner]
+    Scanners --> CMDI[CommandInjectionScanner]
+    Scanners --> JSONI[JsonInjectionScanner]
+    Scanners --> XMLI[XmlInjectionScanner]
+    Scanners --> XSS[XssScanner]
+    
+    %% Utils and HTTP
+    Scanners --> HttpClient[Utils/HttpClientWrapper.cs]
+    Scanners --> PayloadGen[Utils/PayloadGenerator.cs]
+    HttpClient --> Target[(Web Target)]
+    
+    %% Reporting flow
+    Scanner --> Reporter[Core/Reporter.cs]
+    Reporter --> ReportGen[Reports/ReportGenerator.cs]
+    ReportGen --> HtmlReport[Reports/HtmlReportGenerator.cs]
+    ReportGen --> JsonReport[Reports/JsonReportGenerator.cs]
+    
+    %% Logging
+    Scanner --> Logger[Utils/Logger.cs]
+    
+    %% Data Models
+    Scanner --> VulnModel[Models/Vulnerability.cs]
+    Scanner --> TargetModel[Models/Target.cs]
+    
+    style Program fill:#f9f,stroke:#333,stroke-width:2px
+    style Scanner fill:#bbf,stroke:#333,stroke-width:2px
+    style Scanners fill:#fbb,stroke:#333,stroke-width:2px
+    style Reporter fill:#bfb,stroke:#333,stroke-width:2px
+    style Target fill:#ff9,stroke:#333,stroke-width:2px

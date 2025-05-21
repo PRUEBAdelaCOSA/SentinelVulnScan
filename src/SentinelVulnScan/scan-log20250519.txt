@@ -1,0 +1,94 @@
+2025-05-19 23:21:10.132 -04:00 [INF] Starting SentinelVulnScan...
+2025-05-19 23:21:10.186 -04:00 [INF] Running test scan against local vulnerable test server...
+2025-05-19 23:21:10.412 -04:00 [INF] Starting scan of pre-configured target http://localhost:5000
+2025-05-19 23:21:10.414 -04:00 [INF] Target has 6 pre-configured endpoints
+2025-05-19 23:21:10.416 -04:00 [INF] Running SqlInjectionScanner scanner...
+2025-05-19 23:21:11.741 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:11.856 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:11.971 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:12.089 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:12.204 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:12.323 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:12.436 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:12.553 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:12.660 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:12.774 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:12.893 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:13.002 -04:00 [WRN] Found SQL injection vulnerability in parameter username at http://localhost:5000/login
+2025-05-19 23:21:19.569 -04:00 [INF] SqlInjectionScanner found 12 vulnerabilities
+2025-05-19 23:21:19.572 -04:00 [INF] Running XssScanner scanner...
+2025-05-19 23:21:19.578 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:19.683 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:19.789 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:19.907 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:20.021 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:20.136 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:20.251 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:20.368 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:20.482 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:20.585 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:20.689 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:20.807 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:20.919 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:21.037 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:21.155 -04:00 [WRN] Found XSS vulnerability in parameter q at http://localhost:5000/search?q=test
+2025-05-19 23:21:30.885 -04:00 [INF] XssScanner found 15 vulnerabilities
+2025-05-19 23:21:30.889 -04:00 [INF] Running XmlInjectionScanner scanner...
+2025-05-19 23:21:30.893 -04:00 [WRN] Found XML Injection vulnerability at http://localhost:5000/process-xml
+2025-05-19 23:21:31.003 -04:00 [WRN] Found XML Injection vulnerability at http://localhost:5000/process-xml
+2025-05-19 23:21:31.114 -04:00 [WRN] Found XML Injection vulnerability at http://localhost:5000/process-xml
+2025-05-19 23:21:31.220 -04:00 [WRN] Found XML Injection vulnerability at http://localhost:5000/process-xml
+2025-05-19 23:21:31.328 -04:00 [WRN] Found XML Injection vulnerability at http://localhost:5000/process-xml
+2025-05-19 23:21:31.437 -04:00 [WRN] Found XML Injection vulnerability at http://localhost:5000/process-xml
+2025-05-19 23:21:31.551 -04:00 [WRN] Found XML Injection vulnerability at http://localhost:5000/process-xml
+2025-05-19 23:21:31.657 -04:00 [WRN] Found XML Injection vulnerability at http://localhost:5000/process-xml
+2025-05-19 23:21:31.774 -04:00 [INF] XmlInjectionScanner found 8 vulnerabilities
+2025-05-19 23:21:31.776 -04:00 [INF] Running JsonInjectionScanner scanner...
+2025-05-19 23:21:31.779 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:31.887 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:31.989 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:32.097 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:32.205 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:32.320 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:32.428 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:32.535 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:32.644 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:32.753 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:32.856 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:32.967 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:33.082 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:33.186 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:33.290 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:33.405 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:33.521 -04:00 [WRN] Found JSON Injection vulnerability at http://localhost:5000/process-json
+2025-05-19 23:21:33.636 -04:00 [INF] JsonInjectionScanner found 17 vulnerabilities
+2025-05-19 23:21:33.638 -04:00 [INF] Running CommandInjectionScanner scanner...
+2025-05-19 23:21:50.910 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:51.011 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:51.111 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:51.224 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:51.327 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:51.442 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:51.557 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:51.661 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:51.774 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:51.878 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:51.990 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:52.106 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:52.210 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:52.310 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:52.426 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:52.541 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:52.655 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:52.758 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:52.865 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:52.973 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:53.083 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:53.203 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:53.316 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:53.425 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:53.540 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:53.652 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:53.763 -04:00 [WRN] Found Command Injection vulnerability in parameter host at http://localhost:5000/ping?host=localhost
+2025-05-19 23:21:53.869 -04:00 [INF] CommandInjectionScanner found 27 vulnerabilities
+2025-05-19 23:21:53.956 -04:00 [INF] Report generated successfully at local_scan_report.html

